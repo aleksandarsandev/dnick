@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Book Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">{{ book.title }}</h1>
+    <ul class="list-group">
+          		<img src="{{MEDIA_URL}}{{book.image.url}}" width="200" height="200" >
+        <li class="list-group-item"><strong>Title:</strong> {{ book.title }}</li>
+        <li class="list-group-item"><strong>ISBN:</strong> {{ book.isbn }}</li>
+        <li class="list-group-item"><strong>Category:</strong> {{ book.genre }}</li>
+        <li class="list-group-item"><strong>Pages:</strong> {{ book.pages }}</li>
+    </ul>
+    <a href="{% url 'index' %}" class="btn btn-secondary mt-4">Back to All Books</a>
+</div>
+</body>
+</html>

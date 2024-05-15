@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Add Book</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Add a New Book</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_title">Title</label>
+            {{ form.title }}
+        </div>
+        <div class="form-group">
+            <label for="id_isbn">ISBN</label>
+            {{ form.isbn }}
+        </div>
+        <div class="form-group">
+            <label for="id_image">Image</label>
+            {{ form.image }}
+        </div>
+        <div class="form-group">
+            <label for="id_year">Year</label>
+            {{ form.year }}
+        </div>
+        <div class="form-group">
+            <label for="id_publishing_house">Publishing House</label>
+            {{ form.publishing_house }}
+        </div>
+        <div class="form-group">
+            <label for="id_pages">Pages</label>
+            {{ form.pages }}
+        </div>
+        <div class="form-group">
+            <label for="id_dimensions">Dimensions</label>
+            {{ form.dimensions }}
+        </div>
+        <div class="form-group">
+            <label for="id_cover_type">Cover Type</label>
+            {{ form.cover_type }}
+        </div>
+        <div class="form-group">
+            <label for="id_price">Price</label>
+            {{ form.price }}
+        </div>
+        <div class="form-group">
+            <label for="id_genre">Genre</label>
+            {{ form.genre }}
+        </div>
+        <button type="submit" class="btn btn-primary">Add Book</button>
+        <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

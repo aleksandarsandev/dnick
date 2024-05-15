@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Library Books</h1>
+         <a href="{% url 'add_book' %}" class="btn btn-primary mb-4">Add New Book</a>
+        <div class="row">
+            {% for book in books %}
+            <div class="col-md-4 mb-3">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <p class="card-text">Price: {{ book.price }}</p>
+                        <a href="{% url 'detail' book.id %}" class="list-group-item list-group-item-action">
+                 Details
+            </a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
